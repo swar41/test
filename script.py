@@ -7,9 +7,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import pytest
 
-# Set up the WebDriver (ma
-# ke sure you have the appropriate browser driver installed)
-@pytest.fixture(autouse=True, scope='class')
 def setup(request):
     options = Options()
     options.add_argument('--headless')
