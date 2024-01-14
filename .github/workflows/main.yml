@@ -25,4 +25,4 @@ jobs:
           pip install -r requirements.txt  # Include your Selenium dependencies here
 
       - name: Run Selenium Script
-        run: python script.py  # Adjust the path to your script
+        run: python script1.py  # Adjust the path to your script
