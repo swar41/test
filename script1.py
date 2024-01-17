@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import pytest
 
-driver = webdriver.Chrome()# You can use other browser drivers like Firefox, Edge, etc.
+driver = webdriver.Chrome("chromedriver.exe")# You can use other browser drivers like Firefox, Edge, etc.
 
     # Open the web pageC:C:\Users\swaro\OneDrive\Desktop\PD\selen\index.html
 driver.get("http://localhost:8080/")  # Replace with the actual path
