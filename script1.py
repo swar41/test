@@ -13,4 +13,4 @@ class title:
     assert title == expected_title, f"Title mismatch. Expected: {expected_title}, Actual: {title}"
          
 
-driver.quit()
+    driver.quit()
