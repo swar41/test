@@ -9,9 +9,8 @@ class TestLoginPage:
         # time.sleep(2)
 
         # Type username
-       title = driver.title
-           if title == "Your Web App - Home":
-                print('title:',title)
-             else: print('error') 
+          title = driver.title
+          assert  title == "Your Web App - Home":
+            
 
         # time.sleep(2)
