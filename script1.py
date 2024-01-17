@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
 
-         driver.get("http://localhost:8000/")
+         driver.get("http://localhost:8000")
       title = driver.title
 
 # Check if the title is as expected
