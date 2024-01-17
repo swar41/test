@@ -8,6 +8,6 @@ title = driver.title
 
 # Check if the title is as expected
 expected_title = "Your Web App - Home"
- assert title == expected_title, f"Title mismatch. Expected: {expected_title}, Actual: {title}"
+assert title == expected_title, f"Title mismatch. Expected: {expected_title}, Actual: {title}"
 
 driver.quit()
