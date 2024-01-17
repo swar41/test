@@ -8,9 +8,7 @@ class TestLoginPage:
         driver.get("http://localhost:8000/")
         # time.sleep(2)
 
-        # Type username
-          title = driver.title
-          assert  title == "Your Web App - Home":
-            
+         actual_url = driver.current_url
+        assert actual_url == "http://localhost:8000/"
 
         # time.sleep(2)
