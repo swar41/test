@@ -34,6 +34,11 @@ jobs:
         id: results
         run: echo "artifactPath=chrome/reports/" >> $GITHUB_OUTPUT
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+           CODECOV_TOKEN: ${{ secrets.codecoverage }}
+
       - uses: actions/upload-artifact@v3
         if: success() || failure()
         with:
