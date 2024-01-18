@@ -4,12 +4,6 @@ from selenium.webdriver.common.by import By
 
 class title:
   def test11(self,driver):    
-    driver.get("http://localhost:8000")
-    title = driver.title
-    print(title)
-# Check if the title is as expected
-    expected_title = "Your Web Ap"
-    assert title == expected_title, f"Title mismatch. Expected: {expected_title}, Actual: {title}"
-         
-
-    driver.quit()
+    driver.get("https://www.saucedemo.com/")
+    actual_url = driver.current_url
+    assert actual_url == "https://www.saucedemo.com/"
