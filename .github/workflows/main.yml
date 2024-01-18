@@ -25,4 +25,4 @@ jobs:
           pip install -r requirements.txt  # Include your Selenium dependencies here
 
       - name: Run Selenium Script
-        run: pytest script1.py # Adjust the path to your script
+        run: pytest script1.py --browser=chrome  # Adjust the path to your script
