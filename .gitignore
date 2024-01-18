@@ -1,2 +1,2 @@
-tests/reports
+chrome/reports
 .pytest_cache
