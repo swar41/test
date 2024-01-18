@@ -18,31 +18,12 @@ jobs:
       - uses: actions/checkout@v3
         if: success() || failure()
       - run: |
-           cd chrome
-           mkdir -p /home/runner/work/test/test/chrome/reports
-           pytest test_1.py --html=reports/reports.html  --cov=chrome --cov app
            coverage run -m pytest test_1.py
            coverage report
-           chmod -R +rw /home/runner/work/test/test/chrome/reports
-     
-       
+           coverage html
+          
       - name: Upload coverage report
         uses: actions/upload-artifact@v3
         with:
           name: coverage-report
-          path: .coverage
-      - name: Set output
-        if: success() || failure()
-        id: results
-        run: echo "artifactPath=chrome/reports/" >> $GITHUB_OUTPUT
-
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-           CODECOV_TOKEN: ${{ secrets.codecoverage }}
-
-      - uses: actions/upload-artifact@v3
-        if: success() || failure()
-        with:
-          name: test-report
-          path: ${{ steps.results.outputs.artifactPath }}
+          path: htmlcov
