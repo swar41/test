@@ -21,9 +21,11 @@ jobs:
            cd chrome
            mkdir -p /home/runner/work/test/test/chrome/reports
            pytest test_1.py --html=reports/reports.html  --cov=chrome --cov app
+           coverage run -m pytest test_1.py
+           coverage report
            chmod -R +rw /home/runner/work/test/test/chrome/reports
      
-
+       
       - name: Upload coverage report
         uses: actions/upload-artifact@v3
         with:
