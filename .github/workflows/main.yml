@@ -20,13 +20,13 @@ jobs:
       - run: |
            cd chrome
            mkdir -p reports
-           pytest script1.py --browser=chrome --html=reports/reports.html
+           pytest script1.py --html=reports/reports.html
            chmod 777  /home/runner/work/chrome/reports/
       
       - name: Set output
         if: success() || failure()
         id: results
-        run: echo "artifactPath=tests/reports/" >> $GITHUB_OUTPUT
+        run: echo "artifactPath=chrome/reports/" >> $GITHUB_OUTPUT
 
       - uses: actions/upload-artifact@v3
         if: success() || failure()
