@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 
 class title:
   def test11(self,driver):    
-    driver = webdriver.Chrome()
     driver.get("http://localhost:8000")
     title = driver.title
 
