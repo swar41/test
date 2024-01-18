@@ -24,7 +24,7 @@ jobs:
            coverage run -m pytest test_1.py
            coverage report
            coverage html
-           open html/index.html
+           open htmlcov/index.html
           
       - name: Upload coverage report
         uses: actions/upload-artifact@v3
