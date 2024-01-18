@@ -20,7 +20,7 @@ jobs:
       - run: |
            cd chrome
            mkdir -p /home/runner/work/test/test/chrome/reports
-           pytest test_1.py --html=reports/reports.html  --cov=chrome
+           pytest test_1.py --html=reports/reports.html  --cov=chrome --cov app
            chmod -R +rw /home/runner/work/test/test/chrome/reports
      
 
