@@ -20,9 +20,15 @@ jobs:
       - run: |
            cd chrome
            mkdir -p /home/runner/work/test/test/chrome/reports
-           pytest test_1.py --html=reports/reports.html
+           pytest test_1.py --html=reports/reports.html  --cov=chrome
            chmod -R +rw /home/runner/work/test/test/chrome/reports
-      
+     
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: .coverage
       - name: Set output
         if: success() || failure()
         id: results
