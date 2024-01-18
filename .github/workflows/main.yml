@@ -21,7 +21,7 @@ jobs:
            cd chrome
            mkdir -p reports
            pytest test_1.py --html=reports/reports.html
-           chmod 777  /home/runner/work/chrome/reports/
+           chmod 777  /home/runner/chrome/reports/
       
       - name: Set output
         if: success() || failure()
