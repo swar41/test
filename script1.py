@@ -3,7 +3,7 @@ import pytest
 from selenium.webdriver.common.by import By
 
 class title:
-  def tit(self,driver):    
+  def test11(self,driver):    
     driver = webdriver.Chrome()
     driver.get("http://localhost:8000")
     title = driver.title
