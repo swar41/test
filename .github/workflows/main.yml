@@ -19,13 +19,21 @@ jobs:
         if: success() || failure()
       - run: |
            cd chrome
-           mkdir -p /home/runner/work/test/test/chrome/reports
+           mkdir -p /home/runner/work/test/chrome/reports
            pytest test_1.py --html=reports.html 
            coverage run -m pytest test_1.py
            coverage report
-           coverage html
-           open htmlcov/index.html
-          
+           coverage html          
+      - name: Set output
+        if: success() || failure()
+        id: results
+        run: echo "artifactPath=tests/reports/" >> $GITHUB_OUTPUT
+
+      - uses: actions/upload-artifact@v3
+        if: success() || failure()
+        with:
+          name: test-report
+          path: ${{ steps.results.outputs.artifactPath }}
       - name: Upload coverage report
         uses: actions/upload-artifact@v3
         with:
